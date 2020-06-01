@@ -1,11 +1,21 @@
 import React from 'react';
 import './App.scss';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Home from './components/Home/Home';
+import Membership from './components/Membership/Membership';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Power Gym</h1>
-    </div>
+    <Router>
+      <Switch>
+        <Route path='/' exact component={Home}/>
+        <Route path='/membership' exact component={Membership}/>
+      </Switch>
+    </Router>
   );
 }
 
