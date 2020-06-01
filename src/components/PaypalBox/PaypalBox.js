@@ -1,11 +1,11 @@
 import React from 'react';
 import { PayPalButton } from 'react-paypal-button-v2';
 
-const PaypalBox = () => {
+const PaypalBox = ({price}) => {
     return (
         <div>
             <PayPalButton
-                amount="0.01"
+                amount={price}
                 shippingPreference="NO_SHIPPING" 
                 onSuccess={(details, data) => {
                     alert("Transaction completed by " + details.payer.name.given_name);
