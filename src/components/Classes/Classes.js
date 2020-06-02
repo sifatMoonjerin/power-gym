@@ -1,6 +1,7 @@
 import React,{ useState, useEffect } from 'react';
 import ClassCard from '../ClassCard/ClassCard';
 import classes from '../../fakeData/classes';
+import ClassDetails from '../ClassDetails/ClassDetails';
 
 const Classes = () => {
     const [classList, setClassList] = useState([]);
@@ -8,7 +9,6 @@ const Classes = () => {
 
     const showDetails = id => {
         setDetails(classList.find(cls => cls.id === id));
-        console.log(id);
     }
 
     useEffect(() => {
@@ -18,12 +18,20 @@ const Classes = () => {
     return (
         <div>
             <h1>Classes</h1>
+            <div className='m-5 d-flex justify-content-around flex-wrap'>
             { 
                 !details && classList.map(cls => <ClassCard
                         showDetails = {() => showDetails(cls.id)}
                         name={cls.name} 
                         bgImg={cls.bgImg}
                     />)
+            }
+            </div>
+            {
+                !!details && <ClassDetails 
+                                details={details} 
+                                hideDetails={() => setDetails(null)}
+                            />
             }
         </div>
     );

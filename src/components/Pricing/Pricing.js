@@ -22,6 +22,7 @@ const Pricing = () => {
     return (
         <div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
             <h1>Membership Page</h1>
+            <div className='m-5 d-flex justify-content-around flex-wrap'>
             { !price && planList.map(plan => <PlanCard 
                     handlePlan={setPrice}
                     heading={plan.heading}
@@ -30,6 +31,7 @@ const Pricing = () => {
                     features={plan.features} 
                 />
             )}
+            </div>
             { !showPaypal && !!price && <MembershipForm formComplete={formComplete}/> }
             { showPaypal && <PaypalBox price={price} memberDetails={memberDetails}/> }
         </div>
