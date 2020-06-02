@@ -113,7 +113,7 @@ const classes = [
     {
         id: 6,
         name: 'Psycho Training',
-        bgImg: 'https://i.ibb.co/RcV4SKm/bruce-mars-g-Jt-Dg6-Wf-Ml-Q-unsplash.png',
+        bgImg: 'https://i.ibb.co/fD5Qwqs/alora-griffiths-Tuzrz-Arccvc-unsplash.jpg',
         features: ['gym', 'gym', 'gym', 'gym', 'gym'],
         schedule: [
                     {day: 'Monday' , time: "10:00 AM- 10:00 PM"},
