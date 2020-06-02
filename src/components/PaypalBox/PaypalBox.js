@@ -1,7 +1,7 @@
 import React from 'react';
 import { PayPalButton } from 'react-paypal-button-v2';
 
-const PaypalBox = ({price}) => {
+const PaypalBox = ({price, memberDetails}) => {
     return (
         <div>
             <PayPalButton

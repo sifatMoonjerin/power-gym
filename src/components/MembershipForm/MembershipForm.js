@@ -52,7 +52,7 @@ const MembershipForm = ({formComplete}) => {
             onSubmit={values => formComplete(values)}
         >
             <Form>
-                <div className='form-control'>
+                <div className='form-control-g'>
                     <label htmlFor='firstName'>First Name: </label>
                     <Field type='text' name='firstName' id='firstName'/>
                     <ErrorMessage name='firstName'>
@@ -60,7 +60,7 @@ const MembershipForm = ({formComplete}) => {
                     </ErrorMessage>
                 </div>
                 
-                <div className='form-control'>
+                <div className='form-control-g'>
                     <label htmlFor='lastName'>Last Name: </label>
                     <Field type='text' name='lastName' id='lastName'/>
                     <ErrorMessage name='lastName'>
@@ -68,7 +68,7 @@ const MembershipForm = ({formComplete}) => {
                     </ErrorMessage>
                 </div>
                 
-                <div className='form-control'>
+                <div className='form-control-g'>
                     <label htmlFor='email'>Email: </label>
                     <Field type='email' name='email' id='email'/>
                     <ErrorMessage name='email'>
@@ -76,7 +76,7 @@ const MembershipForm = ({formComplete}) => {
                     </ErrorMessage>
                 </div>
 
-                <div className='form-control'>
+                <div className='form-control-g'>
                     <label htmlFor='mobile'>Mobile: </label>
                     <Field type='text' name='mobile' id='mobile'/>
                     <ErrorMessage name='mobile'>
@@ -84,7 +84,7 @@ const MembershipForm = ({formComplete}) => {
                     </ErrorMessage>
                 </div>
 
-                <div className='form-control'>
+                <div className='form-control-g'>
                     <label htmlFor='birthDay'>Date of Birth: </label>
                     <Field type='date' name='birthDay' id='birthDay'/>
                     <ErrorMessage name='birthDay'>
@@ -92,7 +92,7 @@ const MembershipForm = ({formComplete}) => {
                     </ErrorMessage>
                 </div>
 
-                <div className='form-control'>
+                <div className='form-control-g'>
                     <label htmlFor='gender'>Gender: </label>
                     <Field as='select' name='gender' id='gender'>
                         <option>Male</option>
@@ -103,7 +103,7 @@ const MembershipForm = ({formComplete}) => {
                     </ErrorMessage>
                 </div>
 
-                <div className='form-control'>
+                <div className='form-control-g'>
                     <label htmlFor='address'>Address: </label>
                     <Field type='text' name='address' id='address'/>
                     <ErrorMessage name='address'>
@@ -111,7 +111,7 @@ const MembershipForm = ({formComplete}) => {
                     </ErrorMessage>
                 </div>
 
-                <div className='form-control'>
+                <div className='form-control-g'>
                     <label htmlFor='country'>Country: </label>
                     <Field type='text' name='country' id='country'/>
                     <ErrorMessage name='country'>
@@ -119,7 +119,7 @@ const MembershipForm = ({formComplete}) => {
                     </ErrorMessage>
                 </div>
 
-                <div className='form-control'>
+                <div className='form-control-g'>
                     <label htmlFor='city'>City: </label>
                     <Field type='text' name='city' id='city'/>
                     <ErrorMessage name='city'>
@@ -127,7 +127,7 @@ const MembershipForm = ({formComplete}) => {
                     </ErrorMessage>
                 </div>
 
-                <div className='form-control'>
+                <div className='form-control-g'>
                     <label htmlFor='postcode'>Postcode: </label>
                     <Field type='text' name='postcode' id='postcode'/>
                     <ErrorMessage name='postcode'>
@@ -135,7 +135,7 @@ const MembershipForm = ({formComplete}) => {
                     </ErrorMessage>
                 </div>
                 
-                <button type='submit'>Submit</button>
+                <button type='submit'>Next</button>
             </Form>
         </Formik>
     );

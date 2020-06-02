@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PaypalBox from '../PaypalBox/PaypalBox';
 import MembershipForm from '../MembershipForm/MembershipForm';
+import PlanCard from '../PlanCard/PlanCard';
+import plans from '../../fakeData/plans';
 
 const Pricing = () => {
     const [price, setPrice] = useState(0);
@@ -10,15 +12,21 @@ const Pricing = () => {
     const formComplete = details => {
         setMemberDetails(details);
         setShowPaypal(true);
-    }
-
-    console.log('asf',memberDetails);
+    }                                                                                                                                                                                                                                                                                                                                               
 
     return (
-        <div>
+        <div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
             <h1>Membership Page</h1>
-            { !showPaypal && <MembershipForm formComplete={formComplete}/>}
-            { showPaypal && <PaypalBox price={price}/> }
+            { !price && plans.map(plan => <PlanCard 
+                    handlePlan={setPrice}
+                    heading={plan.heading}
+                    bgImg={plan.bgImg}
+                    price={plan.price}
+                    features={plan.features} 
+                />
+            )}
+            { !showPaypal && !!price && <MembershipForm formComplete={formComplete}/> }
+            { showPaypal && <PaypalBox price={price} memberDetails={memberDetails}/> }
         </div>
     );
 };
