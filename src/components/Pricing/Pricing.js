@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PaypalBox from '../PaypalBox/PaypalBox';
 import MembershipForm from '../MembershipForm/MembershipForm';
 import PlanCard from '../PlanCard/PlanCard';
@@ -7,7 +7,12 @@ import plans from '../../fakeData/plans';
 const Pricing = () => {
     const [price, setPrice] = useState(0);
     const [showPaypal, setShowPaypal] = useState(false);
-    const [memberDetails, setMemberDetails] = useState({})
+    const [memberDetails, setMemberDetails] = useState({});
+    const [planList, setPlanList] = useState([]);
+
+    useEffect(()=>{
+        setPlanList([...plans])  
+    }, [])
 
     const formComplete = details => {
         setMemberDetails(details);
@@ -17,7 +22,7 @@ const Pricing = () => {
     return (
         <div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
             <h1>Membership Page</h1>
-            { !price && plans.map(plan => <PlanCard 
+            { !price && planList.map(plan => <PlanCard 
                     handlePlan={setPrice}
                     heading={plan.heading}
                     bgImg={plan.bgImg}
