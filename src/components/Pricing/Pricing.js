@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PaypalBox from '../PaypalBox/PaypalBox';
 import MembershipForm from '../MembershipForm/MembershipForm';
 import PlanCard from '../PlanCard/PlanCard';
-import plans from '../../fakeData/plans';
+// import plans from '../../fakeData/plans';
 
 const Pricing = () => {
     const [price, setPrice] = useState(0);
@@ -11,7 +11,11 @@ const Pricing = () => {
     const [planList, setPlanList] = useState([]);
 
     useEffect(()=>{
-        setPlanList([...plans])  
+        fetch('https://aqueous-depths-35890.herokuapp.com/plans')
+        .then(res => res.json())
+        .then(data => {
+            setPlanList(data);
+        });
     }, [])
 
     const formComplete = details => {
@@ -27,7 +31,8 @@ const Pricing = () => {
                     heading={plan.heading}
                     bgImg={plan.bgImg}
                     price={plan.price}
-                    features={plan.features} 
+                    features={plan.features}
+                    key={plan._id} 
                 />
             )}
             </div>

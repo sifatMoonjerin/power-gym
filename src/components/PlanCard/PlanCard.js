@@ -10,7 +10,7 @@ const PlanCard = ({handlePlan, price, bgImg, heading, features}) => {
                 <h1 className="card-title text-warning">${price}</h1>
         
                 <ul className="card-text">
-                    {features.map(feature => <li>{feature}</li>)}
+                    {features.map((feature, id) => <li key={id}>{feature}</li>)}
                 </ul>
                 <button onClick={()=>handlePlan(price)} className="btn btn-warning">Purchase</button>
             </div>

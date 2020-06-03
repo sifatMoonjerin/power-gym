@@ -1,6 +1,6 @@
 import React,{ useState, useEffect } from 'react';
 import ClassCard from '../ClassCard/ClassCard';
-import classes from '../../fakeData/classes';
+// import classes from '../../fakeData/classes';
 import ClassDetails from '../ClassDetails/ClassDetails';
 
 const Classes = () => {
@@ -12,7 +12,12 @@ const Classes = () => {
     }
 
     useEffect(() => {
-        setClassList(classes);
+        fetch('https://aqueous-depths-35890.herokuapp.com/packages')
+        .then(res => res.json())
+        .then(data => {
+            //  console.log('package data from db', data)
+            setClassList(data);
+        });
     }, [])
 
     return (
@@ -23,6 +28,7 @@ const Classes = () => {
                         showDetails = {() => showDetails(cls.id)}
                         name={cls.name} 
                         bgImg={cls.bgImg}
+                        key={cls._id}
                     />)
             }
             </div>

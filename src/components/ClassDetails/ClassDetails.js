@@ -9,14 +9,14 @@ const ClassDetails = ({details, hideDetails}) => {
                 <img src={details.bgImg} alt='...' style={{'height':'30vh'}}/>
                 <p>{details.summary}</p>
                 <ul>
-                    {details.features.map(feature => <li>{feature}</li>)}
+                    {details.features.map((feature,id) => <li key={id}>{feature}</li>)}
                 </ul>
             </div>
             
             <div className='col-md-6'>
                 <h1><span className='text-warning'>CLASS</span> SCHEDULE</h1>
                 <div className="d-flex justify-content-between flex-wrap">
-                    {details.schedule.map(s => <ScheduleCard day={s.day} time={s.time}/>)}
+                    {details.schedule.map((s, id) => <ScheduleCard key={id} day={s.day} time={s.time}/>)}
                 </div>
                 
                 <button className="btn btn-warning m-2" onClick={hideDetails}>Classes</button>
