@@ -1,7 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ReactGa from 'react-ga';
 
 const TopBanner = () => {
+    const handleGA = () => {
+        ReactGa.event({
+            category: 'Button',
+            action: 'Join us clicked from home page'
+        })
+    }
+
     return (
         <div className="top-banner ">
             <div className='row'>
@@ -16,7 +24,7 @@ const TopBanner = () => {
                   voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 </p>
                 <Link to='/pricing'>
-                    <button className='btn btn-warning'>JOIN US</button>
+                    <button className='btn btn-warning' onClick={handleGA}>JOIN US</button>
                 </Link>
             </div>
             </div>
