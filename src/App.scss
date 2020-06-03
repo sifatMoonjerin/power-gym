@@ -1,3 +1,26 @@
 .error{
     color: red;
 }
+
+.top-banner{
+    background-image: url('https://i.ibb.co/L1PfjQ4/edgar-chaparro-s-Hfo3-WOg-GTU-unsplash.jpg');
+    height: 100vh;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-box{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-control-g{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    min-width: 280px;
+    margin: 10px;
+}

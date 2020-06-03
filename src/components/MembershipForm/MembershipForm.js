@@ -52,6 +52,7 @@ const MembershipForm = ({formComplete}) => {
             onSubmit={values => formComplete(values)}
         >
             <Form>
+                <div className="form-box">
                 <div className='form-control-g'>
                     <label htmlFor='firstName'>First Name: </label>
                     <Field type='text' name='firstName' id='firstName'/>
@@ -134,8 +135,12 @@ const MembershipForm = ({formComplete}) => {
                         {error => <div className='error'>{error}</div>}
                     </ErrorMessage>
                 </div>
+                </div>
+                <div className='d-flex justify-content-center mb-5'>
+                    <button type='submit' className="btn btn-warning w-25 ">Next</button>
+                </div>
                 
-                <button type='submit'>Next</button>
+                
             </Form>
         </Formik>
     );

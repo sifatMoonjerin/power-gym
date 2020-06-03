@@ -20,8 +20,7 @@ const Pricing = () => {
     }                                                                                                                                                                                                                                                                                                                                               
 
     return (
-        <div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-            <h1>Membership Page</h1>
+        <div> 
             <div className='m-5 d-flex justify-content-around flex-wrap'>
             { !price && planList.map(plan => <PlanCard 
                     handlePlan={setPrice}

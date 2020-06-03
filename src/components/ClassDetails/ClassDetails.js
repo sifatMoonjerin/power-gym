@@ -4,7 +4,7 @@ import ScheduleCard from '../ScheduleCard/ScheduleCard';
 
 const ClassDetails = ({details, hideDetails}) => {
     return (
-        <div className='row'>
+        <div className='row pr-5 pl-5'>
             <div className='col-md-6'>
                 <img src={details.bgImg} alt='...' style={{'height':'30vh'}}/>
                 <p>{details.summary}</p>
@@ -19,9 +19,9 @@ const ClassDetails = ({details, hideDetails}) => {
                     {details.schedule.map(s => <ScheduleCard day={s.day} time={s.time}/>)}
                 </div>
                 
-                <button className="btn btn-warning" onClick={hideDetails}>Classes</button>
+                <button className="btn btn-warning m-2" onClick={hideDetails}>Classes</button>
                 <Link to="/pricing">
-                    <button className="btn btn-warning" >Join Us</button>
+                    <button className="btn btn-warning m-2" >Join Us</button>
                 </Link>
             </div>
         </div>

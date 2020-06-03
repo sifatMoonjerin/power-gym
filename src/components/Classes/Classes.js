@@ -16,8 +16,7 @@ const Classes = () => {
     }, [])
 
     return (
-        <div>
-            <h1>Classes</h1>
+        <div className='w-100'>
             <div className='m-5 d-flex justify-content-around flex-wrap'>
             { 
                 !details && classList.map(cls => <ClassCard
